@@ -62,7 +62,7 @@ void NFA::show_chain_result (void) {
   bool result;
   cout << "Inserta la cadena a analizar: ";
   cin >> s;
-  cout << "\x1b[1J\x1b[H"; //Limpio pantalla
+  system("clear"); //Limpio pantalla
   result = chain_test(s);
   cout << "Cadena de entrada " << (result ? "" : "NO ") << "ACEPTADA\n";
 }
@@ -100,24 +100,24 @@ void NFA::show_important_states (void) {
 }
 
 void NFA::is_dfa (void) {
-  set<char> symbols_read;
-  bool dfa;
-  for (set<state_t>::iterator i = states_.begin(); i != states_.end(); i++) {
-    symbols_read.clear();
-    dfa = true;
+  bool dfa = true; //Suponemos que el automata es dfa
+  for (set<state_t>::iterator i = states_.begin(); i != states_.end(); i++) { //Lee todos los estados del automata
+    vector<char> symbols_read;
     for (set<pair<char,unsigned> >::iterator j = i->getNext().begin(); j != i->getNext().end(); j++) {
-      char symbol = get<1>(*j);
-      if (symbols_read.find(symbol) != symbols_read.end() || symbol == '&') {
+      char symbol = get<0>(*j);
+      if (symbol == '&' || find(symbols_read, symbol)) {
         dfa = false;
         break;
       }
-      symbols_read.insert(symbol);
+      symbols_read.push_back(symbol);
     }
-    if (!dfa) {
-      cout << "El automata no es un DFA.\n";
-    } else {
-      cout << "El automata es un DFA.\n";
-    }
+    if (!dfa) break;
+  }
+  system("clear");
+  if (!dfa) {
+    cout << "El automata no es un DFA.\n";
+  } else {
+    cout << "El automata es un DFA.\n";
   }
 }
 
@@ -162,23 +162,70 @@ void NFA::clear (void) {
 
 //METODOS PRIVADOS////////////////////////////////////////
 
-bool NFA::chain_test (const string& chain) const {
-  cout << "Cadena de entrada: " << chain << "\n";
-  cout << "ESTADO ACTUAL\tENTRADA\t\tSIGUIENTE ESTADO\n";
-  state_t aux = find_by_id(init_);
-  unsigned cid;
-  for (int i = 0; i < chain.length(); i++) {
-    cout << aux.id() << "\t\t" << chain[i] << "\t\t";
-    cid = aux.find_by_letter(chain[i]);
-    if (cid != -1) {
-      aux = find_by_id(cid);
-      cout << aux.id() << "\n";
-    } else {
-      cout << "NONE\n";
-      return false;
+bool NFA::find (const vector<char> v, const char c) {
+  for (const char cc: v) {
+    if (cc == c) {
+      return true;
     }
   }
-  if (aux.is_accept()) return true; else return false;
+  return false;
+}
+
+bool NFA::chain_test (const string& chain) const {
+  state_t aux = find_by_id(init_);
+  bool accepted = false;
+  vector<int> states;
+  vector<int> next;
+  vector<char> cc;
+  cout << "Cadena de entrada: " << chain << "\n";
+  chain_test (chain, aux, chain[0], 0, states, next, cc, accepted);
+  return accepted;
+}
+
+void NFA::chain_test (const string& chain, const state_t& state, const char c, const unsigned i, vector<int>& states, vector<int>& next, vector<char>& vc, bool& accepted) const {
+
+
+  if (i == chain.length()) {
+    display_posibilities(states, next, vc);
+    if (!accepted) {
+      accepted = (state.is_accept() ? true : false);
+    }
+    return;
+  }
+
+  if (state.getNext().empty()) {
+    return;
+  }
+
+  vector<pair<char,unsigned> > vstates;
+  for (set<pair<char,unsigned> >::iterator it = state.getNext().begin(); it != state.getNext().end(); it++) {
+    vstates.push_back(*it);
+  }
+
+  for (int it = 0; it < vstates.size(); it++) {
+    if (get<0>(vstates[it]) == c) {
+      states.push_back(state.id());
+      next.push_back(get<1>(vstates[it]));
+      vc.push_back(c);
+      chain_test(chain, find_by_id(get<1>(vstates[it])), chain[(i+1 == chain.length() ? i : i+1)], i+1, states, next, vc, accepted);
+      states.pop_back();
+      next.pop_back();
+      vc.pop_back();
+    }
+  }
+}
+
+void NFA::display_posibilities (const vector<int>& states, const vector<int>& next, const vector<char>& c) const {
+  cout << "ESTADO ACTUAL\tENTRADA\t\tSIGUIENTE ESTADO\n";
+
+  for (int i = 0; i < states.size(); i++) {
+    if (!find_by_id(states[i]).getNext().empty()) {
+      cout << states[i] << "\t\t" << c[i] << "\t\t" << next[i] << "\n";
+    } else {
+      cout << states[i] << "\t\t" << c[i] << "\t\t" << "NONE" << "\n";
+    }
+  }
+  cout << "\n\n";
 }
 
 set<state_t> NFA::dead_states (void) {

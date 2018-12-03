@@ -98,6 +98,7 @@ int main (void) {
           cout << "\x1b[1J\x1b[H"; //Limpio pantalla
           cerr << "El fichero no esta cargado o no se ha cargado correctamente. Por favor, seleccione la opcion 1 (LEER NFA DESDE FICHERO) para cargar el fichero en memoria.\n";
         }
+        break;
       }
       case '7': { //Analizar cadena
         if (!errorApertura) {

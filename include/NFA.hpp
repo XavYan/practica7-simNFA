@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string>
 #include <cassert>
+#include <vector>
 
 #include "state_t.hpp"
 
@@ -28,14 +29,17 @@ public:
   void show_alphabet (void);
 
   void is_dfa (void);
-
+  
   ostream& dbg_write (void) const;
   ostream& write (void) const;
 
   void clear (void);
 
 private:
+  bool find (const vector<char> v, const char c);
   bool chain_test (const string& chain) const;
+  void chain_test (const string& chain, const state_t& state, const char c, const unsigned i, vector<int>& states, vector<int>& next, vector<char>& vc, bool& accepted) const;
+  void display_posibilities (const vector<int>& states, const vector<int>& next, const vector<char>& c) const;
   set<state_t> dead_states (void);
   set<state_t> important_states (void);
   const state_t find_by_id (const unsigned id) const;
