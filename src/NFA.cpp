@@ -13,7 +13,7 @@ const unsigned NFA::init (void) {
   return init_;
 }
 
-void NFA::create_dfa (const char* nombreFichero, bool& errorApertura) {
+void NFA::create_nfa (const char* nombreFichero, bool& errorApertura) {
   states_.clear();
   ifstream fich;
   fich.open(nombreFichero);

@@ -50,7 +50,7 @@ int main (void) {
         cin >> nombreFichero;
         nombreFichero = "../examples/"+nombreFichero;
         cout << "\x1b[1J\x1b[H"; //Limpio pantalla
-        nfa.create_dfa(nombreFichero.data(), errorApertura);
+        nfa.create_nfa(nombreFichero.data(), errorApertura);
         if (errorApertura) {
           cerr << "Error de apertura. No se ha podido cargar el fichero correctamente.\n";
         } else {
