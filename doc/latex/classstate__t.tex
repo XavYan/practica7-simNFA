@@ -1,0 +1,203 @@
+\section{state\+\_\+t Class Reference}
+\label{classstate__t}\index{state\+\_\+t@{state\+\_\+t}}
+
+
+{\ttfamily \#include $<$state\+\_\+t.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ state\+\_\+t} (const unsigned \textbf{ id}, const bool accept=false)
+\begin{DoxyCompactList}\small\item\em Constructor of a state. \end{DoxyCompactList}\item 
+\textbf{ $\sim$state\+\_\+t} (void)
+\begin{DoxyCompactList}\small\item\em Destruct a state. \end{DoxyCompactList}\item 
+const unsigned \textbf{ id} (void) const
+\begin{DoxyCompactList}\small\item\em Get ID of the state. \end{DoxyCompactList}\item 
+set$<$ pair$<$ char, unsigned $>$ $>$ \textbf{ get\+Next} (void) const
+\begin{DoxyCompactList}\small\item\em Get all the next states connected to the actual state. \end{DoxyCompactList}\item 
+const bool \textbf{ is\+\_\+accept} (void) const
+\begin{DoxyCompactList}\small\item\em Check if the state is an acceptation one. \end{DoxyCompactList}\item 
+unsigned \textbf{ find\+\_\+by\+\_\+letter} (const char c)
+\begin{DoxyCompactList}\small\item\em Find the state connected to this by the character. \end{DoxyCompactList}\item 
+void \textbf{ insert\+\_\+pair} (const char symbol, const unsigned \textbf{ id})
+\begin{DoxyCompactList}\small\item\em Insert a pair (in this case, a pair char, unsigned) to add a new connection to the state. \end{DoxyCompactList}\item 
+ostream \& \textbf{ dbg\+\_\+write} (void) const
+\begin{DoxyCompactList}\small\item\em Write on console a friendly information about the state. \end{DoxyCompactList}\item 
+const bool \textbf{ operator$<$} (const \textbf{ state\+\_\+t} state) const
+\begin{DoxyCompactList}\small\item\em A operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file state\+\_\+t.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classstate__t_ad94bc43e1e3df9f60b4844b75fa0ee3e}} 
+\index{state\+\_\+t@{state\+\_\+t}!state\+\_\+t@{state\+\_\+t}}
+\index{state\+\_\+t@{state\+\_\+t}!state\+\_\+t@{state\+\_\+t}}
+\subsubsection{state\+\_\+t()}
+{\footnotesize\ttfamily state\+\_\+t\+::state\+\_\+t (\begin{DoxyParamCaption}\item[{const unsigned}]{id,  }\item[{const bool}]{accept = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Constructor of a state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & identifier of the state \\
+\hline
+{\em accept} & set if the state is a acceptation one. By default is false \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3 of file state\+\_\+t.\+cpp.
+
+\mbox{\label{classstate__t_af27723c21f5cbdbdc237e4bd7aaff2ed}} 
+\index{state\+\_\+t@{state\+\_\+t}!````~state\+\_\+t@{$\sim$state\+\_\+t}}
+\index{````~state\+\_\+t@{$\sim$state\+\_\+t}!state\+\_\+t@{state\+\_\+t}}
+\subsubsection{$\sim$state\+\_\+t()}
+{\footnotesize\ttfamily state\+\_\+t\+::$\sim$state\+\_\+t (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Destruct a state. 
+
+
+
+Definition at line 4 of file state\+\_\+t.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classstate__t_a4cbecc58710974534b8f1dc0592b9ae1}} 
+\index{state\+\_\+t@{state\+\_\+t}!dbg\+\_\+write@{dbg\+\_\+write}}
+\index{dbg\+\_\+write@{dbg\+\_\+write}!state\+\_\+t@{state\+\_\+t}}
+\subsubsection{dbg\+\_\+write()}
+{\footnotesize\ttfamily ostream \& state\+\_\+t\+::dbg\+\_\+write (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Write on console a friendly information about the state. 
+
+
+
+Definition at line 33 of file state\+\_\+t.\+cpp.
+
+\mbox{\label{classstate__t_a716e1078c9486ebb9686dfc97d5749c7}} 
+\index{state\+\_\+t@{state\+\_\+t}!find\+\_\+by\+\_\+letter@{find\+\_\+by\+\_\+letter}}
+\index{find\+\_\+by\+\_\+letter@{find\+\_\+by\+\_\+letter}!state\+\_\+t@{state\+\_\+t}}
+\subsubsection{find\+\_\+by\+\_\+letter()}
+{\footnotesize\ttfamily unsigned state\+\_\+t\+::find\+\_\+by\+\_\+letter (\begin{DoxyParamCaption}\item[{const char}]{c }\end{DoxyParamCaption})}
+
+
+
+Find the state connected to this by the character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & const char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An unsigned int corresponding to the state 
+\end{DoxyReturn}
+
+
+Definition at line 18 of file state\+\_\+t.\+cpp.
+
+\mbox{\label{classstate__t_a2ab5aaf45f890ade849fc87a0da80f6a}} 
+\index{state\+\_\+t@{state\+\_\+t}!get\+Next@{get\+Next}}
+\index{get\+Next@{get\+Next}!state\+\_\+t@{state\+\_\+t}}
+\subsubsection{get\+Next()}
+{\footnotesize\ttfamily set$<$ pair$<$ char, unsigned $>$ $>$ state\+\_\+t\+::get\+Next (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get all the next states connected to the actual state. 
+
+\begin{DoxyReturn}{Returns}
+return a copy of the attribute \char`\"{}next\+\_\+\char`\"{} 
+\end{DoxyReturn}
+
+
+Definition at line 10 of file state\+\_\+t.\+cpp.
+
+\mbox{\label{classstate__t_ade808c541a78e337c021020842e3c21d}} 
+\index{state\+\_\+t@{state\+\_\+t}!id@{id}}
+\index{id@{id}!state\+\_\+t@{state\+\_\+t}}
+\subsubsection{id()}
+{\footnotesize\ttfamily const unsigned state\+\_\+t\+::id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ID of the state. 
+
+\begin{DoxyReturn}{Returns}
+ID of the state 
+\end{DoxyReturn}
+
+
+Definition at line 6 of file state\+\_\+t.\+cpp.
+
+\mbox{\label{classstate__t_a8a18ea542fd131b22dfee5897caab79e}} 
+\index{state\+\_\+t@{state\+\_\+t}!insert\+\_\+pair@{insert\+\_\+pair}}
+\index{insert\+\_\+pair@{insert\+\_\+pair}!state\+\_\+t@{state\+\_\+t}}
+\subsubsection{insert\+\_\+pair()}
+{\footnotesize\ttfamily void state\+\_\+t\+::insert\+\_\+pair (\begin{DoxyParamCaption}\item[{const char}]{symbol,  }\item[{const unsigned}]{id }\end{DoxyParamCaption})}
+
+
+
+Insert a pair (in this case, a pair char, unsigned) to add a new connection to the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & A const char with the character who connects it \\
+\hline
+{\em id} & A constant unsigned int \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file state\+\_\+t.\+cpp.
+
+\mbox{\label{classstate__t_a83874dc98292ca29be83680dee6f9456}} 
+\index{state\+\_\+t@{state\+\_\+t}!is\+\_\+accept@{is\+\_\+accept}}
+\index{is\+\_\+accept@{is\+\_\+accept}!state\+\_\+t@{state\+\_\+t}}
+\subsubsection{is\+\_\+accept()}
+{\footnotesize\ttfamily const bool state\+\_\+t\+::is\+\_\+accept (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the state is an acceptation one. 
+
+\begin{DoxyReturn}{Returns}
+0 if the state is accept, 0 if not 
+\end{DoxyReturn}
+
+
+Definition at line 14 of file state\+\_\+t.\+cpp.
+
+\mbox{\label{classstate__t_aef60c051e68f523c809033f2e9bdd202}} 
+\index{state\+\_\+t@{state\+\_\+t}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!state\+\_\+t@{state\+\_\+t}}
+\subsubsection{operator$<$()}
+{\footnotesize\ttfamily const bool state\+\_\+t\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \textbf{ state\+\_\+t}}]{state }\end{DoxyParamCaption}) const}
+
+
+
+A operator. 
+
+
+
+Definition at line 46 of file state\+\_\+t.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\textbf{ state\+\_\+t.\+hpp}\item 
+src/\textbf{ state\+\_\+t.\+cpp}\end{DoxyCompactItemize}

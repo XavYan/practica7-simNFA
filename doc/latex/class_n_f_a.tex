@@ -1,0 +1,199 @@
+\section{N\+FA Class Reference}
+\label{class_n_f_a}\index{N\+FA@{N\+FA}}
+
+
+{\ttfamily \#include $<$N\+F\+A.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ N\+FA} (void)
+\item 
+\textbf{ N\+FA} (const set$<$ \textbf{ state\+\_\+t} $>$ \&states)
+\item 
+\textbf{ $\sim$\+N\+FA} (void)
+\item 
+const unsigned \textbf{ init} (void)
+\item 
+void \textbf{ create\+\_\+nfa} (const char $\ast$nombre\+Fichero, bool \&error\+Apertura)
+\begin{DoxyCompactList}\small\item\em Creates a \doxyref{N\+FA}{p.}{class_n_f_a} read from file. \end{DoxyCompactList}\item 
+void \textbf{ show\+\_\+chain\+\_\+result} (void)
+\item 
+void \textbf{ show\+\_\+dead\+\_\+states} (void)
+\item 
+void \textbf{ show\+\_\+important\+\_\+states} (void)
+\item 
+void \textbf{ show\+\_\+alphabet} (void)
+\item 
+void \textbf{ is\+\_\+dfa} (void)
+\item 
+ostream \& \textbf{ dbg\+\_\+write} (void) const
+\item 
+ostream \& \textbf{ write} (void) const
+\item 
+void \textbf{ clear} (void)
+\begin{DoxyCompactList}\small\item\em Reset the automaton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file N\+F\+A.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_n_f_a_a66efe39af1dc7de37657b1190c45944a}} 
+\index{N\+FA@{N\+FA}!N\+FA@{N\+FA}}
+\index{N\+FA@{N\+FA}!N\+FA@{N\+FA}}
+\subsubsection{N\+F\+A()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily N\+F\+A\+::\+N\+FA (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file N\+F\+A.\+cpp.
+
+\mbox{\label{class_n_f_a_a431cf13da8bde750f172b14be32cdab3}} 
+\index{N\+FA@{N\+FA}!N\+FA@{N\+FA}}
+\index{N\+FA@{N\+FA}!N\+FA@{N\+FA}}
+\subsubsection{N\+F\+A()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily N\+F\+A\+::\+N\+FA (\begin{DoxyParamCaption}\item[{const set$<$ \textbf{ state\+\_\+t} $>$ \&}]{states }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file N\+F\+A.\+cpp.
+
+\mbox{\label{class_n_f_a_a7b616de29c6eed25230b03bf70760123}} 
+\index{N\+FA@{N\+FA}!````~N\+FA@{$\sim$\+N\+FA}}
+\index{````~N\+FA@{$\sim$\+N\+FA}!N\+FA@{N\+FA}}
+\subsubsection{$\sim$\+N\+F\+A()}
+{\footnotesize\ttfamily N\+F\+A\+::$\sim$\+N\+FA (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file N\+F\+A.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_n_f_a_a7432d5e32a1aec320e959d76feb31e0f}} 
+\index{N\+FA@{N\+FA}!clear@{clear}}
+\index{clear@{clear}!N\+FA@{N\+FA}}
+\subsubsection{clear()}
+{\footnotesize\ttfamily void N\+F\+A\+::clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reset the automaton. 
+
+
+
+Definition at line 158 of file N\+F\+A.\+cpp.
+
+\mbox{\label{class_n_f_a_a66729e2c770cd17a4c8ad28530dad16e}} 
+\index{N\+FA@{N\+FA}!create\+\_\+nfa@{create\+\_\+nfa}}
+\index{create\+\_\+nfa@{create\+\_\+nfa}!N\+FA@{N\+FA}}
+\subsubsection{create\+\_\+nfa()}
+{\footnotesize\ttfamily void N\+F\+A\+::create\+\_\+nfa (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nombre\+Fichero,  }\item[{bool \&}]{error\+Apertura }\end{DoxyParamCaption})}
+
+
+
+Creates a \doxyref{N\+FA}{p.}{class_n_f_a} read from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nombre\+Fichero} & The name of the file \\
+\hline
+{\em error\+Apertura} & Boolean showing if there was an error or not \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 16 of file N\+F\+A.\+cpp.
+
+\mbox{\label{class_n_f_a_ac6069b019c10ef22e6ccfc47b92d3d00}} 
+\index{N\+FA@{N\+FA}!dbg\+\_\+write@{dbg\+\_\+write}}
+\index{dbg\+\_\+write@{dbg\+\_\+write}!N\+FA@{N\+FA}}
+\subsubsection{dbg\+\_\+write()}
+{\footnotesize\ttfamily ostream \& N\+F\+A\+::dbg\+\_\+write (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 134 of file N\+F\+A.\+cpp.
+
+\mbox{\label{class_n_f_a_aa74c3119e5ca86ef327730f60e499198}} 
+\index{N\+FA@{N\+FA}!init@{init}}
+\index{init@{init}!N\+FA@{N\+FA}}
+\subsubsection{init()}
+{\footnotesize\ttfamily const unsigned N\+F\+A\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file N\+F\+A.\+cpp.
+
+\mbox{\label{class_n_f_a_a6010aa200cd4cdea88a861e6dd3dbd19}} 
+\index{N\+FA@{N\+FA}!is\+\_\+dfa@{is\+\_\+dfa}}
+\index{is\+\_\+dfa@{is\+\_\+dfa}!N\+FA@{N\+FA}}
+\subsubsection{is\+\_\+dfa()}
+{\footnotesize\ttfamily void N\+F\+A\+::is\+\_\+dfa (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 102 of file N\+F\+A.\+cpp.
+
+\mbox{\label{class_n_f_a_afe630c5ba9cad7fe3cc549357157754a}} 
+\index{N\+FA@{N\+FA}!show\+\_\+alphabet@{show\+\_\+alphabet}}
+\index{show\+\_\+alphabet@{show\+\_\+alphabet}!N\+FA@{N\+FA}}
+\subsubsection{show\+\_\+alphabet()}
+{\footnotesize\ttfamily void N\+F\+A\+::show\+\_\+alphabet (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 124 of file N\+F\+A.\+cpp.
+
+\mbox{\label{class_n_f_a_a116c7cf249ad165b3b8fbbb479ad231b}} 
+\index{N\+FA@{N\+FA}!show\+\_\+chain\+\_\+result@{show\+\_\+chain\+\_\+result}}
+\index{show\+\_\+chain\+\_\+result@{show\+\_\+chain\+\_\+result}!N\+FA@{N\+FA}}
+\subsubsection{show\+\_\+chain\+\_\+result()}
+{\footnotesize\ttfamily void N\+F\+A\+::show\+\_\+chain\+\_\+result (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 60 of file N\+F\+A.\+cpp.
+
+\mbox{\label{class_n_f_a_ae4fa7f392df3ab6cd532181a9237e6be}} 
+\index{N\+FA@{N\+FA}!show\+\_\+dead\+\_\+states@{show\+\_\+dead\+\_\+states}}
+\index{show\+\_\+dead\+\_\+states@{show\+\_\+dead\+\_\+states}!N\+FA@{N\+FA}}
+\subsubsection{show\+\_\+dead\+\_\+states()}
+{\footnotesize\ttfamily void N\+F\+A\+::show\+\_\+dead\+\_\+states (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file N\+F\+A.\+cpp.
+
+\mbox{\label{class_n_f_a_a55d394bb161d3ef0bc4de81c75a7f103}} 
+\index{N\+FA@{N\+FA}!show\+\_\+important\+\_\+states@{show\+\_\+important\+\_\+states}}
+\index{show\+\_\+important\+\_\+states@{show\+\_\+important\+\_\+states}!N\+FA@{N\+FA}}
+\subsubsection{show\+\_\+important\+\_\+states()}
+{\footnotesize\ttfamily void N\+F\+A\+::show\+\_\+important\+\_\+states (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 86 of file N\+F\+A.\+cpp.
+
+\mbox{\label{class_n_f_a_a745629c66ab456aadd634d5f6d15199b}} 
+\index{N\+FA@{N\+FA}!write@{write}}
+\index{write@{write}!N\+FA@{N\+FA}}
+\subsubsection{write()}
+{\footnotesize\ttfamily ostream \& N\+F\+A\+::write (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 143 of file N\+F\+A.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\textbf{ N\+F\+A.\+hpp}\item 
+src/\textbf{ N\+F\+A.\+cpp}\end{DoxyCompactItemize}

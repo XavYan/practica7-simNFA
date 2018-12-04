@@ -31,7 +31,7 @@ void state_t::insert_pair (const char symbol, const unsigned id) {
 }
 
 ostream& state_t::dbg_write (void) const {
-  cout << "\t---------- ESTADO " << id_+1 << " -----------\n";
+  cout << "\t---------- ESTADO " << id_ << " -----------\n";
   cout << "\tEs un nodo de aceptacion?: " << accept_ << "\n";
   cout << "\tTransiciones totales: " << next_.size() << "\n";
   if (!next_.empty()) cout << "\tEstados conectados:\n";

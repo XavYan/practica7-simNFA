@@ -1,0 +1,30 @@
+\section{include/\+N\+FA.hpp File Reference}
+\label{_n_f_a_8hpp}\index{include/\+N\+F\+A.\+hpp@{include/\+N\+F\+A.\+hpp}}
+
+
+\doxyref{N\+FA}{p.}{class_n_f_a} implementation.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}state\+\_\+t.\+hpp\char`\"{}}\newline
+Include dependency graph for N\+F\+A.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ N\+FA}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{N\+FA}{p.}{class_n_f_a} implementation. 
+
+Himar Manuel \begin{DoxyDate}{Date}
+1/12/2018 
+\end{DoxyDate}
